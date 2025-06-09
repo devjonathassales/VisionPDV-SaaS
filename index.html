@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDV SaaS - Início</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-900">
+  <div class="flex h-screen overflow-hidden">
+
+    <!-- Sidebar -->
+    <aside class="w-64 bg-white shadow-lg hidden md:block">
+      <div class="p-6 text-xl font-bold border-b">PDV SaaS</div>
+      <nav class="p-4 space-y-2 text-sm">
+        <a href="public/dashboard/dashboard.html" class="block py-2 px-4 rounded hover:bg-gray-200">Dashboard</a>
+        <a href="public/pessoas/clientes.html" class="block py-2 px-4 rounded hover:bg-gray-200">Clientes</a>
+        <a href="public/pessoas/funcionarios.html" class="block py-2 px-4 rounded hover:bg-gray-200">Funcionários</a>
+        <a href="public/pessoas/vendedores.html" class="block py-2 px-4 rounded hover:bg-gray-200">Vendedores</a>
+        <a href="public/vendas/pdv.html" class="block py-2 px-4 rounded hover:bg-gray-200">PDV</a>
+        <a href="public/vendas/pedidos.html" class="block py-2 px-4 rounded hover:bg-gray-200">Pedidos</a>
+        <a href="public/produtos/produtos.html" class="block py-2 px-4 rounded hover:bg-gray-200">Produtos</a>
+        <a href="public/produtos/estoque.html" class="block py-2 px-4 rounded hover:bg-gray-200">Estoque</a>
+        <a href="public/financeiro/contas-receber.html" class="block py-2 px-4 rounded hover:bg-gray-200">Contas a Receber</a>
+        <a href="public/financeiro/contas-pagar.html" class="block py-2 px-4 rounded hover:bg-gray-200">Contas a Pagar</a>
+        <a href="public/configuracoes/usuarios.html" class="block py-2 px-4 rounded hover:bg-gray-200">Usuários</a>
+        <a href="public/configuracoes/configuracoes.html" class="block py-2 px-4 rounded hover:bg-gray-200">Configurações</a>
+      </nav>
+    </aside>
+
+    <!-- Conteúdo principal -->
+    <div class="flex-1 flex flex-col">
+      <!-- Header -->
+      <header class="bg-white shadow p-4 flex justify-between items-center">
+        <h1 class="text-xl font-semibold">Sistema PDV SaaS</h1>
+        <div class="flex items-center space-x-4">
+          <span class="text-sm">Admin</span>
+          <button class="bg-red-500 text-white px-3 py-1 rounded text-sm hover:bg-red-600">Sair</button>
+        </div>
+      </header>
+
+      <!-- Conteúdo da página -->
+      <main class="flex-1 overflow-y-auto p-6 bg-gray-50">
+        <h2 class="text-2xl font-bold mb-4">Seções do sistema</h2>
+        <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <li><a href="public/dashboard/dashboard.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Dashboard</a></li>
+          <li><a href="public/pessoas/clientes.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Clientes</a></li>
+          <li><a href="public/pessoas/funcionarios.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Funcionários</a></li>
+          <li><a href="public/pessoas/vendedores.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Vendedores</a></li>
+          <li><a href="public/vendas/pdv.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">PDV</a></li>
+          <li><a href="public/vendas/pedidos.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Pedidos</a></li>
+          <li><a href="public/produtos/produtos.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Produtos</a></li>
+          <li><a href="public/produtos/estoque.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Estoque</a></li>
+          <li><a href="public/financeiro/contas-receber.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Contas a Receber</a></li>
+          <li><a href="public/financeiro/contas-pagar.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Contas a Pagar</a></li>
+          <li><a href="public/configuracoes/usuarios.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Usuários</a></li>
+          <li><a href="public/configuracoes/configuracoes.html" class="block p-4 bg-white shadow rounded hover:bg-gray-100">Configurações</a></li>
+        </ul>
+      </main>
+    </div>
+  </div>
+</body>
+</html>
