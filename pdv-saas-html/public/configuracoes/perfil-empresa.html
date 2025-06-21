@@ -1,14 +1,70 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="min-h-screen flex items-center justify-center">
-    <h1 class="text-3xl font-bold">Página em construção</h1>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Perfil da Empresa | VisionWare SaaS PDV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Cabeçalho -->
+    <header class="bg-green-700 text-white text-center py-4 shadow-md">
+      <h1 class="text-3xl font-bold">Perfil da Empresa</h1>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 p-6 max-w-3xl mx-auto w-full space-y-6">
+
+      <!-- Razão Social -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <label class="block text-gray-700 font-semibold mb-1">Razão Social:</label>
+        <input type="text" class="w-full border rounded p-2" placeholder="Digite a razão social da empresa">
+      </div>
+
+      <!-- Nome Fantasia -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <label class="block text-gray-700 font-semibold mb-1">Nome Fantasia:</label>
+        <input type="text" class="w-full border rounded p-2" placeholder="Digite o nome fantasia">
+      </div>
+
+      <!-- CNPJ -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <label class="block text-gray-700 font-semibold mb-1">CNPJ:</label>
+        <input type="text" class="w-full border rounded p-2" placeholder="00.000.000/0001-00">
+      </div>
+
+      <!-- Telefone -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <label class="block text-gray-700 font-semibold mb-1">Telefone:</label>
+        <input type="tel" class="w-full border rounded p-2" placeholder="(00) 0000-0000">
+      </div>
+
+      <!-- E-mail -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <label class="block text-gray-700 font-semibold mb-1">E-mail:</label>
+        <input type="email" class="w-full border rounded p-2" placeholder="exemplo@empresa.com">
+      </div>
+
+      <!-- Logo -->
+      <div class="bg-white rounded-lg shadow p-4">
+        <label class="block text-gray-700 font-semibold mb-1">Logo da Empresa:</label>
+        <input type="file" class="w-full border rounded p-2 bg-white file:mr-3 file:py-1 file:px-4 file:rounded file:border-0 file:bg-green-700 file:text-white file:cursor-pointer">
+      </div>
+
+      <!-- Botão Salvar -->
+      <div class="text-right">
+        <button class="bg-green-700 hover:bg-green-800 text-white px-4 py-2 rounded shadow">
+          Salvar Perfil
+        </button>
+      </div>
+
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-green-700 text-center text-white py-3">
+      © 2025 - VisionWare SaaS PDV
+    </footer>
+
+  </body>
 </html>
