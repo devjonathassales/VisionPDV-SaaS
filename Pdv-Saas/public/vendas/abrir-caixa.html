@@ -3,8 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Abertura de Caixa - VisionPDV</title>
+    <title>Abertura de Caixa - VisionWare</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
     <style>
       :root {
         --verde: #7ed957;
@@ -12,17 +16,33 @@
         --preto: #000000;
         --branco: #ffffff;
       }
+      body {
+        font-family: "Open Sans", sans-serif;
+      }
+      h1,
+      h2,
+      h3,
+      .title {
+        font-family: "Montserrat", sans-serif;
+      }
     </style>
   </head>
-  <body class="bg-black text-white">
-
+  <body>
     <!-- Logo e Título -->
     <header>
-      <img src="/public/assets/img/logo.png" alt="Logo vision">
-      <div>
-        <h1>VISIONPVD</h1>
-        <p>Sistema de Gestão</p>
+      <div class="bg-[var(--verde)] h-fit p-6">
+        <h1 class="text-3xl text-">VisionWare</h1>
+        <h2>
+          Seja Bem Vindo(a): <span class="text-white">Usuário Logado</span>
+        </h2>
       </div>
     </header>
   </body>
 </html>
+<div class="flex justify-center">
+  <img
+    src="/public/assets/img/logo.png"
+    alt="Logo vision"
+    class="w-12 h-auto"
+  />
+</div>
