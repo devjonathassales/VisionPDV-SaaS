@@ -6,6 +6,13 @@
     <title>Abertura de Caixa - VisionWare</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans&display=swap"
       rel="stylesheet"
     />
@@ -27,22 +34,29 @@
       }
     </style>
   </head>
-  <body>
+  <body class="h-screen flex flex-col">
     <!-- Logo e Título -->
-    <header>
-      <div class="bg-[var(--verde)] h-fit p-6">
-        <h1 class="text-3xl text-">VisionWare</h1>
-        <h2>
-          Seja Bem Vindo(a): <span class="text-white">Usuário Logado</span>
-        </h2>
-      </div>
+    <header class="bg-[var(--verde)] p-6">
+      <h1 class="text-3xl text-">VisionWare</h1>
+      <h2>Seja Bem Vindo(a): <span class="text-white">Usuário Logado</span></h2>
     </header>
+    <!-- Meio -->
+    <main class="flex-1 flex flex-col justify-between p-4">
+      <div class="flex gap-4 h-full">
+        <div class="w-[25%] bg-[var(--cinza)] rounded-lg"></div>
+        <div class="w-[50%] bg-[var(--cinza)] rounded-lg"></div>
+        <div class="w-[25%] bg-[var(--cinza)] rounded-lg"></div>
+      </div>
+      <div class="flex gap-6">
+        <button class="flex items-center gap-2 bg-transparent border border-black text-black px-4 py-2 rounded">
+          <i class="fas fa-print"></i>
+          Imprimir Movimentação
+        </button>
+        <button class="flex items-center gap-2 bg-transparent border border-black text-black px-4 py-2 rounded">
+          <i class="fas fa-print"></i>
+          Imprimir Resumo
+        </button>
+      </div>
+    </main>
   </body>
 </html>
-<div class="flex justify-center">
-  <img
-    src="/public/assets/img/logo.png"
-    alt="Logo vision"
-    class="w-12 h-auto"
-  />
-</div>
