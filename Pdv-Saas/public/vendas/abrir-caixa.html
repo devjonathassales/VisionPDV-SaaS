@@ -35,26 +35,85 @@
     </style>
   </head>
   <body class="h-screen flex flex-col">
-    <!-- Logo e Título -->
+    <!-- LOGO E TÍTULO -->
     <header class="bg-[var(--verde)] p-6">
       <h1 class="text-3xl text-">VisionWare</h1>
       <h2>Seja Bem Vindo(a): <span class="text-white">Usuário Logado</span></h2>
     </header>
-    <!-- Meio -->
+
+    <!-- MIOLO -->
     <main class="flex-1 flex flex-col justify-between p-4">
+      <!--  1ª SEÇÃO -->
       <div class="flex gap-4 h-full">
-        <div class="w-[25%] bg-[var(--cinza)] rounded-lg"></div>
-        <div class="w-[50%] bg-[var(--cinza)] rounded-lg"></div>
-        <div class="w-[25%] bg-[var(--cinza)] rounded-lg"></div>
+        <div class="w-[18%] bg-[var(--cinza)] rounded-lg">
+          <h3 class="py-3 px-8">STATUS DO CAIXA</h3>
+          <!-- LINHA -->
+          <div class="h-px bg-black w-[80%] ml-8 opacity-20"></div>
+          <!-- STATUS DO CAIXA -->
+          <div class="py-3 flex items-center justify-center gap-3">
+            <div class="text-2xl">
+              <i class="fas fa-square-check"></i>
+            </div>
+            <h2 class="text-2xl font-bold">ABERTO</h2>
+          </div>
+          <!-- LINHA -->
+          <div class="h-px bg-black w-[80%] ml-8 opacity-20"></div>
+          <!-- SALDO INICIAL -->
+          <div class="flex flex-col gap-3 py-3 px-8">
+            <label for="Saldo" class="text-lg font-medium text-right"
+              >Saldo Inicial (dinheiro):
+            </label>
+            <input
+              type="text"
+              id="Saldo"
+              placeholder="R$ 0,00"
+              class="rounded text-right pr-2"
+            />
+          </div>
+          <!-- OBSERVAÇÃO -->
+          <div class="py-10 flex flex-col px-8 gap-3">
+            <label for="obs-texto" class="font-bold">Observação:</label>
+            <textarea
+              name="obs-texto"
+              id="obs-texto"
+              placeholder="Digite aqui..."
+              class="rounded p-2"
+            ></textarea>
+          </div>
+          <!-- REGISTRO DE HORA -->
+          <div class="flex flex-col gap-1 px-8">
+            <span class="font-bold">Data / Hora de Abertura:</span>
+            <samp>00/00/2025 00:00</samp>
+          </div>
+        </div>
+
+        <!-- 2ª Seção -->
+        <div class="w-[64%] bg-[var(--cinza)] rounded-lg"></div>
+        <!-- 3º Seção -->
+        <div class="w-[18%] bg-[var(--cinza)] rounded-lg"></div>
       </div>
-      <div class="flex gap-6">
-        <button class="flex items-center gap-2 bg-transparent border border-black text-black px-4 py-2 rounded">
-          <i class="fas fa-print"></i>
-          Imprimir Movimentação
-        </button>
-        <button class="flex items-center gap-2 bg-transparent border border-black text-black px-4 py-2 rounded">
-          <i class="fas fa-print"></i>
-          Imprimir Resumo
+
+      <!-- Botões base -->
+      <div class="flex justify-between items-center mt-4">
+        <div class="flex gap-2">
+          <button
+            class="flex items-center gap-2 bg-transparent border border-black text-black px-4 py-2 rounded"
+          >
+            <i class="fas fa-print"></i>
+            Imprimir Movimentação
+          </button>
+          <button
+            class="flex items-center gap-2 bg-transparent border border-black text-black px-4 py-2 rounded"
+          >
+            <i class="fas fa-print"></i>
+            Imprimir Resumo
+          </button>
+        </div>
+        <button
+          class="bg-transparent border gap-2 border-black px-4 py-2 rounded"
+        >
+          <i class="fas fa-right-from-bracket"></i>
+          Sair
         </button>
       </div>
     </main>
