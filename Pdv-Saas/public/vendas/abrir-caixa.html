@@ -45,10 +45,10 @@
     <main class="flex-1 flex flex-col justify-between p-4">
       <!--  1ª SEÇÃO -->
       <div class="flex gap-4 h-full">
-        <div class="w-[18%] bg-[var(--cinza)] rounded-lg">
+        <div class="w-[18%] bg-[var(--cinza)] rounded-lg flex flex-col">
           <h3 class="py-3 px-8">STATUS DO CAIXA</h3>
           <!-- LINHA -->
-          <div class="h-px bg-black w-[80%] ml-8 opacity-20"></div>
+          <div class="h-px bg-black w-[80%] mx-auto opacity-20"></div>
           <!-- STATUS DO CAIXA -->
           <div class="py-3 flex items-center justify-center gap-3">
             <div class="text-2xl">
@@ -57,7 +57,7 @@
             <h2 class="text-2xl font-bold">ABERTO</h2>
           </div>
           <!-- LINHA -->
-          <div class="h-px bg-black w-[80%] ml-8 opacity-20"></div>
+          <div class="h-px bg-black w-[80%] mx-auto opacity-20"></div>
           <!-- SALDO INICIAL -->
           <div class="flex flex-col gap-3 py-3 px-8">
             <label for="Saldo" class="text-lg font-medium text-right"
@@ -85,18 +85,102 @@
             <span class="font-bold">Data / Hora de Abertura:</span>
             <samp>00/00/2025 00:00</samp>
           </div>
-          <div class="px-8 py-2 bg-transparent flex border border-black m-8 mt-24 rounded gap-3 justify-center items-center">
+          <!-- ABRIR CAIXA -->
+          <div
+            class="px-8 py-2 bg-[var(--branco)] flex border border-black m-8 mt-auto rounded gap-3 justify-center items-center"
+          >
             <div class="text-xl">
               <i class="fas fa-square-check"></i>
             </div>
-            <button class="">
-              Abrir Caixa (Fx)
-            </button>
+            <button class="">Abrir Caixa (Fx)</button>
           </div>
         </div>
 
-        <!-- 2ª Seção -->
-        <div class="w-[64%] bg-[var(--cinza)] rounded-lg"></div>
+        <!-- 2ª SEÇÃO -->
+        <div class="w-[64%] bg-[var(--cinza)] rounded-lg">
+          <h3 class="py-3 px-8">MOVIMENTAÇÃO DO CAIXA</h3>
+          <!-- LINHA -->
+          <div class="h-px bg-black w-[95%] mx-auto opacity-20"></div>
+          <!-- TABELA -->
+          <div
+            class="bg-[var(--branco)] p-4 rounded py-2 mt-4 mx-7 overflow-auto h-[80%] flex flex-col"
+          >
+            <div
+              class="opacity-20 absolute insent-0 flex justify-center items-center z-0 pointer-events-none"
+            >
+              <img
+                src="/public/assets/img/logo.png"
+                alt="Logo marca dágua"
+                class="w-1/2"
+              />
+            </div>
+
+            <div class="relative flex-1">
+              <table class="w-full text-sm text-left">
+                <!-- CABEÇALHO -->
+                <thead class="">
+                  <tr>
+                    <th class="py-2 px-4 text-left">Data / Hora</th>
+                    <th class="py-2 px-4 text-left">Descrição do Produto</th>
+                    <th class="py-2 px-4 text-right">Entrada</th>
+                    <th class="py-2 px-4 text-left">Saída</th>
+                    <th class="py-2 px-4 text-left">Formas de Pagamento</th>
+                  </tr>
+                </thead>
+                <!-- MIOLO TABELA -->
+                <tbody>
+                  <tr class="border-t">
+                    <td class="px-4 py-2 text-left">00/00/2025</td>
+                    <td class="px-4 py-2 text-left">SSD 1T</td>
+                    <td class="px-4 py-2 text-right">527,99</td>
+                    <td class="px-4 py-2 text-left">0,00</td>
+                    <td class="px-4 py-2 text-left">Cartão de Crédito</td>
+                  </tr>
+                  <tr class="border-t">
+                    <td class="px-4 py-2 text-left">00/00/2025</td>
+                    <td class="px-4 py-2 text-left">Telcado Mouse</td>
+                    <td class="px-4 py-2 text-right">100,00</td>
+                    <td class="px-4 py-2 text-left">29,90</td>
+                    <td class="px-4 py-2 text-left">Dinheiro</td>
+                  </tr>
+                  <tr class="border-t">
+                    <td class="px-4 py-2 text-left">00/00/2025</td>
+                    <td class="px-4 py-2 text-left">Teclado RGB</td>
+                    <td class="px-4 py-2 text-right">200,00</td>
+                    <td class="px-4 py-2 text-left">49,50</td>
+                    <td class="px-4 py-2 text-left">Dinheiro</td>
+                  </tr>
+                  <tr class="border-t">
+                    <td class="px-4 py-2 text-left">00/00/2025</td>
+                    <td class="px-4 py-2 text-left">Fonte 500W</td>
+                    <td class="px-4 py-2 text-right">125,89</td>
+                    <td class="px-4 py-2 text-left">0,00</td>
+                    <td class="px-4 py-2 text-left">Cartão de Crédito</td>
+                  </tr>
+                  <tr class="border-t">
+                    <td class="px-4 py-2 text-left">00/00/2025</td>
+                    <td class="px-4 py-2 text-left">Teclado RGB</td>
+                    <td class="px-4 py-2 text-right">200,00</td>
+                    <td class="px-4 py-2 text-left">49,50</td>
+                    <td class="px-4 py-2 text-left">Dinheiro</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <div
+              class="bg-[var(--cinza)] rounded flex justify-center items-center gap-4 py-2 font-bold"
+            >
+              <span class="bg-[var(--branco)] px-4 rounded">1.153,88</span>
+              <span class="bg-[var(--branco)] px-4 rounded">127,90</span>
+            </div>
+          </div>
+          <div class="gap-4">
+            <button>Adicionar Entrada / Saída</button>
+            <button>Excluir Entrada / Saída</button>
+          </div>
+        </div>
+
         <!-- 3º Seção -->
         <div class="w-[18%] bg-[var(--cinza)] rounded-lg"></div>
       </div>
