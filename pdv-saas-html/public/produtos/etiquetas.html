@@ -1,14 +1,136 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="min-h-screen flex items-center justify-center">
-    <h1 class="text-3xl font-bold">Página em construção</h1>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Etiquetas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  </head>
+  <body class="bg-gray-100 p-6">
+    <!-- Título e Ações -->
+    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h1 class="text-2xl font-semibold text-green-600 mb-6">
+        Cadastro de Etiquetas
+      </h1>
+
+      <!-- Botão Nova Etiqueta -->
+      <div class="flex justify-end mb-4">
+        <button
+          onclick="toggleEtiquetaForm()"
+          class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          + Nova Etiqueta
+        </button>
+      </div>
+
+      <!-- Tabela (Exemplo de Etiqueta) -->
+      <div class="overflow-x-auto">
+        <table class="min-w-full bg-white border border-gray-200 text-sm">
+          <thead>
+            <tr class="bg-gray-100 text-gray-700 text-left">
+              <th class="px-4 py-2 border-b">Produto</th>
+              <th class="px-4 py-2 border-b">Quantidade</th>
+              <th class="px-4 py-2 border-b">Preview Código de Barras</th>
+              <th class="px-4 py-2 border-b text-center">Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="hover:bg-gray-50">
+              <td class="px-4 py-2 border-b">Cadeira Tiffany</td>
+              <td class="px-4 py-2 border-b">10</td>
+              <td class="px-4 py-2 border-b">
+                <img
+                  src="https://barcode.tec-it.com/barcode.ashx?data=123456789012&code=EAN13&dpi=96"
+                  alt="Código de Barras"
+                  class="h-10"
+                />
+              </td>
+              <td class="px-4 py-2 border-b text-center">
+                <div
+                  class="flex justify-center items-center gap-3 whitespace-nowrap"
+                >
+                  <button
+                    title="Imprimir"
+                    class="text-green-600 hover:text-green-800 text-lg"
+                  >
+                    <i class="fas fa-print"></i>
+                  </button>
+                  <button
+                    title="Editar"
+                    class="text-yellow-500 hover:text-yellow-700 text-lg"
+                  >
+                    <i class="fas fa-pen"></i>
+                  </button>
+                  <button
+                    title="Excluir"
+                    class="text-red-600 hover:text-red-800 text-lg"
+                  >
+                    <i class="fas fa-trash"></i>
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Formulário Oculto -->
+    <section id="formEtiqueta" class="hidden bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold mb-4 text-green-600">Nova Etiqueta</h2>
+
+      <form class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <!-- Selecionar Produto -->
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-700"
+            >Selecionar Produto</label
+          >
+          <select class="mt-1 p-2 w-full border border-gray-300 rounded">
+            <option value="">Selecione um produto</option>
+            <option value="cadeira">Cadeira Tiffany</option>
+            <option value="mesa">Mesa de Vidro</option>
+            <option value="armario">Armário 3 Portas</option>
+          </select>
+        </div>
+
+        <!-- Quantidade de Etiquetas -->
+        <div class="sm:col-span-2">
+          <label class="block text-sm font-medium text-gray-700"
+            >Quantidade de Etiquetas</label
+          >
+          <input
+            type="number"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+            placeholder="Ex: 10"
+          />
+        </div>
+
+        <!-- Botões -->
+        <div class="sm:col-span-2 flex justify-end gap-2 mt-4">
+          <button
+            type="submit"
+            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+          >
+            Gerar Etiquetas
+          </button>
+          <button
+            type="reset"
+            class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Script de exibição do formulário -->
+    <script>
+      function toggleEtiquetaForm() {
+        const form = document.getElementById("formEtiqueta");
+        form.classList.toggle("hidden");
+      }
+    </script>
+  </body>
 </html>
