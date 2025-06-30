@@ -1,14 +1,248 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Página</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-gray-100 text-gray-800">
-  <div class="min-h-screen flex items-center justify-center">
-    <h1 class="text-3xl font-bold">Página em construção</h1>
-  </div>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Cadastro de Produtos</title>
+        <!-- Font Awesome CDN -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Link Tailwind -->
+        <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 p-6">
+    <!-- Título e Filtros -->
+    <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h1 class="text-2xl font-semibold text-green-600 mb-6">
+        Cadastro de Produtos/Serviços
+      </h1>
+
+      <div class="flex flex-wrap items-center justify-between gap-4 mb-4">
+        <input
+          type="text"
+          placeholder="Buscar produto..."
+          class="border border-gray-300 rounded-md p-2 w-full sm:w-1/3"
+        />
+
+        <select class="border border-gray-300 rounded-md p-2 w-full sm:w-1/3">
+          <option>Ordem Alfabética</option>
+          <option>Maior Preço</option>
+          <option>Estoque Baixo</option>
+        </select>
+
+        <button
+          onclick="toggleForm()"
+          class="bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 transition"
+        >
+          + Novo Produto
+        </button>
+      </div>
+
+      <!-- Tabela com produto cadastrado -->
+     <!-- Tabela com todos os campos -->
+<div class="overflow-x-auto">
+  <table class="min-w-full bg-white border border-gray-200 text-sm">
+    <thead>
+      <tr class="bg-gray-100 text-gray-700 text-left">
+        <th class="px-3 py-2 border-b">Imagem</th>
+        <th class="px-3 py-2 border-b">Código</th>
+        <th class="px-3 py-2 border-b">Nome</th>
+        <th class="px-3 py-2 border-b">Categoria</th>
+        <th class="px-3 py-2 border-b">Unidade</th>
+        <th class="px-3 py-2 border-b">Qtd. Estoque</th>
+        <th class="px-3 py-2 border-b">Estoque Mínimo</th>
+        <th class="px-3 py-2 border-b">Preço Custo</th>
+        <th class="px-3 py-2 border-b">Preço Venda</th>
+        <th class="px-3 py-2 border-b">Preço Promo</th>
+        <th class="px-3 py-2 border-b">Preço Atacado</th>
+        <th class="px-3 py-2 border-b">Lucro (%)</th>
+        <th class="px-3 py-2 border-b">Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 border-b">
+          <img src="https://via.placeholder.com/40" alt="Produto" class="w-10 h-10 object-cover rounded" />
+        </td>
+        <td class="px-3 py-2 border-b">00123</td>
+        <td class="px-3 py-2 border-b">Cadeira Tiffany</td>
+        <td class="px-3 py-2 border-b">Mobília</td>
+        <td class="px-3 py-2 border-b">un</td>
+        <td class="px-3 py-2 border-b">20</td>
+        <td class="px-3 py-2 border-b">10</td>
+        <td class="px-3 py-2 border-b">R$ 50,00</td>
+        <td class="px-3 py-2 border-b">R$ 75,50</td>
+        <td class="px-3 py-2 border-b">R$ 70,00</td>
+        <td class="px-3 py-2 border-b">R$ 60,00</td>
+        <td class="px-3 py-2 border-b">50%</td>
+        <td class="px-3 py-2 border-b text-center">
+          <div class="flex justify-center items-center gap-3 whitespace-nowrap">
+            <button title="Visualizar" class="text-green-600 hover:text-green-800 text-lg">
+              <i class="fas fa-eye"></i>
+            </button>
+            <button title="Editar" class="text-yellow-500 hover:text-yellow-700 text-lg">
+              <i class="fas fa-pen"></i>
+            </button>
+            <button title="Excluir" class="text-red-600 hover:text-red-800 text-lg">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+    <!-- Formulário de Cadastro (inicialmente oculto) -->
+    <section id="formProduto" class="hidden bg-white p-6 rounded-lg shadow-md">
+      <h2 class="text-xl font-semibold mb-4 text-green-600">Novo Produto</h2>
+
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Nome do Produto</label
+          >
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700">Código</label>
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Categoria</label
+          >
+          <select class="mt-1 p-2 w-full border border-gray-300 rounded">
+            <option>Selecione</option>
+            <option>Mobília</option>
+            <option>Eletrônicos</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Unidade de Medida</label
+          >
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+            placeholder="un, kg..."
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Quantidade em Estoque</label
+          >
+          <input
+            type="number"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Estoque Mínimo</label
+          >
+          <input
+            type="number"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Preço de Custo</label
+          >
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+            placeholder="R$ 0,00"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Preço de Venda</label
+          >
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+            placeholder="R$ 0,00"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Preço Promocional</label
+          >
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+            placeholder="R$ 0,00"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Preço Atacado</label
+          >
+          <input
+            type="text"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+            placeholder="R$ 0,00"
+          />
+        </div>
+
+        <div>
+          <label class="block text-sm font-medium text-gray-700"
+            >Margem de Lucro (%)</label
+          >
+          <input
+            type="number"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+          />
+        </div>
+
+        <div class="md:col-span-2">
+          <label class="block text-sm font-medium text-gray-700"
+            >Imagem do Produto</label
+          >
+          <input
+            type="file"
+            class="mt-1 p-2 w-full border border-gray-300 rounded"
+          />
+        </div>
+
+        <div class="md:col-span-2 flex justify-end gap-2 mt-4">
+          <button
+            type="submit"
+            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+          >
+            Salvar
+          </button>
+          <button
+            type="reset"
+            class="bg-gray-300 text-gray-800 px-4 py-2 rounded hover:bg-gray-400"
+          >
+            Cancelar
+          </button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Script para mostrar/esconder formulário -->
+    <script>
+      function toggleForm() {
+        const form = document.getElementById("formProduto");
+        form.classList.toggle("hidden");
+      }
+    </script>
+  </body>
 </html>
